@@ -2,11 +2,14 @@
 var express = require('express'),
 app = express(),
 path = require('path'),
+mongoose = require('mongoose'),
 
 // create routes for the admin section
 
 // get an instance of the router
 adminRouter = express.Router();
+
+mongoose.connect('mongodb://localhost/db_name');
 
 // send our index.html file to the user for the home page
 app.get('/', function(req, res) {
