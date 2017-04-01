@@ -65,6 +65,19 @@ adminRouter.param('name', function(req, res, next, name) {
 //apply the routes to our application
 app.use('/admin', adminRouter);
 
+app.route('/login')
+
+ // show the form (GET http://localhost:1337/login)
+ .get(function(req, res) {
+ 	res.send('this is the login form');
+ })
+
+ // process the form (POST http://localhost:1337/login)
+ .post(function(req, res) {
+ 	console.log('processing');
+ 	res.send('processing the login form!');
+ });
+
 // start the server
 app.listen(1337);
 console.log('Server up at port 1337!');
